@@ -1,2 +1,2 @@
-export const formatPrice = (product) =>
-  product.toLocaleString("en-US", { style: "currency", currency: "EUR" });
+export const formatPrice = (price = "") =>
+  price.toLocaleString("en-US", { style: "currency", currency: "EUR" });

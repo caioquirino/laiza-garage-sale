@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "license": "ISC",
   "homepage": "https://ndealmeida.github.io/garage",
-  "description": "Junior & Millena's Garage Sale",
+  "description": "Matheus' Garage Sale",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ndealmeida/garage.git"
@@ -13,11 +13,13 @@
     "sale"
   ],
   "dependencies": {
+    "@apollo/client": "^3.7.5",
     "@fontsource/roboto": "^4.5.7",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
     "fslightbox-react": "^1.6.2-2",
+    "graphql": "^16.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-ga4": "^1.4.1",
@@ -48,5 +50,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^2.16.4"
   }
 }

@@ -18,11 +18,11 @@ export const ProductDetails = ({
         </a>
       )}
 
-      <ul>
+      {/* <ul>
         {details.map((detail, idx) => (
           <li key={idx}>{detail}</li>
         ))}
-      </ul>
+      </ul> */}
     </div>
   );
 };

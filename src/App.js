@@ -30,7 +30,7 @@ function App() {
 
         <div className="container">
           {products.map((p, i) => (
-            <ProductCard key={i} product={p} />
+            <ProductCard key={i} {...p} />
           ))}
         </div>
       </div>

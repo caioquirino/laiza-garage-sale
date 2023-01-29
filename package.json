@@ -2,11 +2,11 @@
   "name": "garage",
   "version": "0.1.0",
   "license": "ISC",
-  "homepage": "https://ndealmeida.github.io/garage",
+  "homepage": "https://mattmoreira.github.io/garage-sale",
   "description": "Matheus' Garage Sale",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ndealmeida/garage.git"
+    "url": "git+https://github.com/mattmoreira/garage-sale.git"
   },
   "keywords": [
     "garage",

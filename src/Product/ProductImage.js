@@ -15,7 +15,7 @@ export const ProductImage = ({ imageUrls }) => {
       <FsLightbox toggler={toggler} sources={imageUrls} type="image" />
 
       <a href="/#" onClick={onClick}>
-        <img src={firstImage} alt={firstImage} />
+        <img src={firstImage} alt={firstImage} loading="lazy" />
       </a>
     </>
   );

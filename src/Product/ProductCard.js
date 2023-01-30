@@ -14,6 +14,7 @@ export const ProductCard = ({
   originalPrice,
   url,
   quantity,
+  description,
 }) => {
   return (
     <div className="product">
@@ -27,6 +28,7 @@ export const ProductCard = ({
         originalPrice={originalPrice}
         url={url}
         quantity={quantity}
+        description={description}
       />
 
       <div className="price">{formatPrice(price)}</div>

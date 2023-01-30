@@ -9,6 +9,7 @@ const GET_PRODUCTS = gql`
         origPrice
         price
         stockLevel
+        description
         images {
           file {
             url
@@ -39,6 +40,7 @@ export const useProducts = () => {
     imageUrls: p.images.map((i) => i.file.url),
     quantity: p.stockLevel,
     url: getOriginalProductUrl(p.attributes),
+    description: p.description,
   }));
 
   return products.sort((a, b) => a.price - b.price);

@@ -5,6 +5,7 @@ export const ProductDetails = ({
   originalPrice,
   url,
   quantity,
+  description,
 }) => {
   const discount = Math.round(100 - (price / originalPrice) * 100);
 
@@ -21,11 +22,7 @@ export const ProductDetails = ({
 
       {quantity && <h4>Quantity: {quantity}</h4>}
 
-      {/* <ul>
-        {details.map((detail, idx) => (
-          <li key={idx}>{detail}</li>
-        ))}
-      </ul> */}
+      {description && <div dangerouslySetInnerHTML={{ __html: description }} />}
     </div>
   );
 };

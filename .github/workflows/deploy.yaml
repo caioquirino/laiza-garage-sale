@@ -25,6 +25,8 @@ jobs:
       - name: Build
         env:
           REACT_APP_GA_MEASUREMENT_ID: ${{ secrets.GA_MEASUREMENT_ID }}
+          REACT_APP_SWELL_STORE_ID: ${{ secrets.SWELL_STORE_ID }}
+          REACT_APP_SWELL_PUBLIC_TOKEN: ${{ secrets.SWELL_PUBLIC_TOKEN }}
         run: npm run build
 
       - name: Deploy to gh-pages

@@ -6,19 +6,18 @@ on:
   pull_request:
     branches: [ main ]
 
+env:
+ NODE_VERSION: 16.15.0
+
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: 'read'
-      id-token: 'write'
-      pages: write
     steps:
       - uses: actions/checkout@v2
 
       - uses: actions/setup-node@v2
         with:
-          node-version: 16.15.0
+          node-version: ${{ env.NODE_VERSION }}
 
       - name: Install dependencies
         run: npm ci
@@ -32,9 +31,16 @@ jobs:
           REACT_APP_SWELL_STORE_ID: ${{ secrets.SWELL_STORE_ID }}
           REACT_APP_SWELL_PUBLIC_TOKEN: ${{ secrets.SWELL_PUBLIC_TOKEN }}
         
-
       - uses: actions/upload-pages-artifact@v1
         with:
           path: ./build
 
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+      pages: write
+    needs: build
+    steps:
       - uses: actions/deploy-pages@v1

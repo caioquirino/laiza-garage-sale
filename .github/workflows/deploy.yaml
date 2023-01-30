@@ -9,6 +9,10 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+      pages: write
     steps:
       - uses: actions/checkout@v2
 
@@ -22,15 +26,15 @@ jobs:
       - name: Test
         run: npm run test:ci
 
-      - name: Build
+      - run: npm run build
         env:
           REACT_APP_GA_MEASUREMENT_ID: ${{ secrets.GA_MEASUREMENT_ID }}
           REACT_APP_SWELL_STORE_ID: ${{ secrets.SWELL_STORE_ID }}
           REACT_APP_SWELL_PUBLIC_TOKEN: ${{ secrets.SWELL_PUBLIC_TOKEN }}
-        run: npm run build
+        
 
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v3
+      - uses: actions/upload-pages-artifact@v1
         with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          publish_dir: ./build
+          path: ./build
+
+      - uses: actions/deploy-pages@v1

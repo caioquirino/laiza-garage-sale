@@ -13,8 +13,18 @@ const Contact = () => (
     <p>Everything is in Amstelveen, Randwijck</p>
 
     <ul>
-      <li>Whatsapp: 06 1766 9739</li>
-      <li>Email: mattelias+nl@live.com</li>
+      <li>
+        Whatsapp:{" "}
+        <a href="https://wa.me/310617669739" rel="noreferrer" target="_blank">
+          06 1766 9739
+        </a>
+      </li>
+      <li>
+        Email:{" "}
+        <a href="mailto:mattelias+nl@live.com" rel="noreferrer" target="_blank">
+          mattelias+nl@live.com
+        </a>
+      </li>
     </ul>
   </div>
 );

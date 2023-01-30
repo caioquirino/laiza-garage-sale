@@ -52,6 +52,7 @@
     ]
   },
   "devDependencies": {
+    "@apollo/react-testing": "^4.0.0",
     "@graphql-codegen/cli": "^2.16.4"
   }
 }

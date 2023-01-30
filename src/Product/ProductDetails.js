@@ -4,6 +4,7 @@ export const ProductDetails = ({
   price,
   originalPrice,
   url,
+  quantity,
 }) => {
   const discount = Math.round(100 - (price / originalPrice) * 100);
 
@@ -17,6 +18,8 @@ export const ProductDetails = ({
           Original price
         </a>
       )}
+
+      {quantity && <h4>Quantity: {quantity}</h4>}
 
       {/* <ul>
         {details.map((detail, idx) => (

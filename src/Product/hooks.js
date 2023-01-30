@@ -8,6 +8,7 @@ const GET_PRODUCTS = gql`
         name
         origPrice
         price
+        stockLevel
         images {
           file {
             url
@@ -36,6 +37,7 @@ export const useProducts = () => {
     price: p.price,
     originalPrice: p.origPrice,
     imageUrls: p.images.map((i) => i.file.url),
+    quantity: p.stockLevel,
     url: getOriginalProductUrl(p.attributes),
   }));
 

@@ -60,7 +60,7 @@ header {
 .product h3 {
   font-size: 20px;
   text-transform: uppercase;
-  margin: 18px 18px 25px 18px;
+  margin: 8px 18px 25px 0;
 }
 
 .product-details {

@@ -9,8 +9,10 @@ import { apolloClient } from "./config/Apollo";
 
 import "./index.css";
 
-if (process.env.REACT_APP_GA_MEASUREMENT_ID !== undefined) {
-  ReactGA.initialize(process.env.REACT_APP_GA_MEASUREMENT_ID);
+const GA_MEASUREMENT_ID = process.env.REACT_APP_GA_MEASUREMENT_ID;
+
+if (GA_MEASUREMENT_ID) {
+  ReactGA.initialize(GA_MEASUREMENT_ID);
   ReactGA.send("pageview");
 }
 

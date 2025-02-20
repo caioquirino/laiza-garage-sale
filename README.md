@@ -1,6 +1,6 @@
 # Getting Started with this Garage store page
 
-This is a Garage Store page forked from @mattmoreira/garage-sale (which is also forked from @marcbarbosa/garage).
+This is a Garage Store page forked from @mattmoreira/garage-sale (which is also forked from @marcbarbosa/garage). Thanks a lot for your Open Source effort!
 
 Feel free to fork it and use to also sell your products!
 

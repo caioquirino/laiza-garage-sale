@@ -113,6 +113,16 @@ a.original:hover {
   background-color: #a7a7a7;
 }
 
+.available {
+  position: relative;
+  background-color: #bbefbb;
+  width: 100%;
+  color: #000000;
+  line-height: 50px;
+  text-align: center;
+  font-size: 27px;
+}
+
 .sold {
   position: relative;
   background-color: crimson;

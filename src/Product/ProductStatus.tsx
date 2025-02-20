@@ -5,7 +5,7 @@ type ProductStatusProps = {
 export const ProductStatus = ({ active }: ProductStatusProps) => {
   switch (active) {
     case true:
-      return <div className="">Available</div>;
+      return <div className="available">Available</div>;
     case false:
       return <div className="sold">Not available</div>;
     default:

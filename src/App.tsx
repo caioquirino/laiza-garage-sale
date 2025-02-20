@@ -8,22 +8,22 @@ const Contact = () => (
   <div className="contact">
     <p>
       Hey! I'm moving out of the country at the start of March, so I'm selling
-      my furniture
+      a few things
     </p>
     <p>Feel free to reach out if you are interested</p>
-    <p>Everything is in Amstelveen, Randwijck</p>
+    <p>Everything is in Amsterdam close to the Lelylaan station</p>
 
     <ul>
       <li>
         Whatsapp:{" "}
-        <a href="https://wa.me/310617669739" rel="noreferrer" target="_blank">
-          06 1766 9739
+        <a href="https://wa.me/31612345678" rel="noreferrer" target="_blank">
+          06 1234 5678
         </a>
       </li>
       <li>
         Email:{" "}
-        <a href="mailto:mattelias+nl@live.com" rel="noreferrer" target="_blank">
-          mattelias+nl@live.com
+        <a href="mailto:email@address.com" rel="noreferrer" target="_blank">
+          email@address.com
         </a>
       </li>
     </ul>

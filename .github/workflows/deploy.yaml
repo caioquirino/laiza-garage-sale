@@ -27,9 +27,9 @@ jobs:
 
       - run: npm run build
         env:
-          REACT_APP_GA_MEASUREMENT_ID: ${{ secrets.GA_MEASUREMENT_ID }}
-          REACT_APP_SWELL_STORE_ID: ${{ secrets.SWELL_STORE_ID }}
-          REACT_APP_SWELL_PUBLIC_TOKEN: ${{ secrets.SWELL_PUBLIC_TOKEN }}
+          VITE_GA_MEASUREMENT_ID: ${{ secrets.GA_MEASUREMENT_ID }}
+          VITE_SWELL_STORE_ID: ${{ secrets.SWELL_STORE_ID }}
+          VITE_SWELL_PUBLIC_TOKEN: ${{ secrets.SWELL_PUBLIC_TOKEN }}
         
       - uses: actions/upload-pages-artifact@v1
         with:

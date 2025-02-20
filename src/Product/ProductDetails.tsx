@@ -1,12 +1,20 @@
+
+export type ProductDetailsProps = {
+  name: string
+  price: number
+  originalPrice: number
+  url: string
+  quantity: number
+  description: string
+}
 export const ProductDetails = ({
-  details,
   name,
   price,
   originalPrice,
   url,
   quantity,
   description,
-}) => {
+}: ProductDetailsProps) => {
   const discount = Math.round(100 - (price / originalPrice) * 100);
 
   return (

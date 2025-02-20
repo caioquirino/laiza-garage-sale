@@ -5,24 +5,33 @@ import { ProductImage } from "./ProductImage";
 import { formatPrice } from "../utils/Price";
 import { mapImageUrls } from "../utils/Image";
 
+export type ProductCardProps = {
+  active: boolean
+  imageUrls: string[]
+  name: string
+  price: number
+  originalPrice: number
+  url: string
+  quantity: number
+  description: string
+}
+
 export const ProductCard = ({
-  status,
+  active,
   imageUrls,
-  details,
   name,
   price,
   originalPrice,
   url,
   quantity,
   description,
-}) => {
+}: ProductCardProps) => {
   return (
     <div className="product">
-      <ProductStatus status={status} />
+      <ProductStatus active={active} />
       <ProductImage imageUrls={mapImageUrls(imageUrls)} />
 
       <ProductDetails
-        details={details}
         name={name}
         price={price}
         originalPrice={originalPrice}
@@ -30,6 +39,7 @@ export const ProductCard = ({
         quantity={quantity}
         description={description}
       />
+
 
       <div className="price">{formatPrice(price)}</div>
     </div>

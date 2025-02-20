@@ -1,7 +1,8 @@
 import "@fontsource/roboto";
 import "./App.css";
 
-import { useProducts, ProductCard } from "./Product";
+import { getProducts, ProductCard, type Product } from "./Product";
+import { Suspense, useEffect, useState } from "react";
 
 const Contact = () => (
   <div className="contact">
@@ -30,18 +31,25 @@ const Contact = () => (
 );
 
 function App() {
-  const products = useProducts();
+  const [products, setProducts] = useState([] as Product[]);
+
+  useEffect(() => {
+    getProducts().then(setProducts)
+  }, []);
 
   return (
     <div className="App">
       <div>
-        <header>Matheus&#39; Garage Sale</header>
+        <header>Laiza&#39;s Garage Sale</header>
         <Contact />
 
         <div className="container">
+
+        <Suspense fallback={<div>Loading...</div>}>
           {products.map((p, i) => (
             <ProductCard key={i} {...p} />
           ))}
+        </Suspense>
         </div>
       </div>
     </div>

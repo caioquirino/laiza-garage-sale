@@ -3,13 +3,22 @@ import "./App.css";
 import { ReactComponent as Contact } from './Contact.md'
 
 import { getProducts, ProductCard, type Product } from "./Product";
-import { Suspense, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
-  const [products, setProducts] = useState([] as Product[]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<boolean>(false);
+  const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
-    getProducts().then(setProducts)
+    getProducts().then((products) => {
+      setProducts(products)
+    }).catch(error => {
+      setError(true)
+    }).finally(() => {
+      setLoading(false)
+    })
+    
   }, []);
 
   return (
@@ -21,12 +30,12 @@ function App() {
         </div>
 
         <div className="container">
+          {loading && <div>Loading products...</div>}
+          {error && <div>Error Loading products.</div>}
 
-        <Suspense fallback={<div>Loading...</div>}>
           {products.map((p, i) => (
             <ProductCard key={i} {...p} />
           ))}
-        </Suspense>
         </div>
       </div>
     </div>

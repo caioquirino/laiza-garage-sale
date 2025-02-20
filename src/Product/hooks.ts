@@ -42,10 +42,7 @@ export const getProducts = async (): Promise<Product[]> =>
       'sale_price',
       'purchase_options'
     ]
-  })).results.map(p => {
-    console.log("Original",p)
-    return p;
-  }).map((p: SwellProduct): Product => ({
+  })).results.map((p: SwellProduct): Product => ({
     id: p.id!,
     name: p.name,
     price: p.price!,
@@ -55,7 +52,4 @@ export const getProducts = async (): Promise<Product[]> =>
     quantity: p.stock_level || 1,
     url: getOriginalProductUrl(p.attributes!)!,
     description: p.description!,
-  })).sort((a, b) => a.price - b.price).map(p => {
-    console.log("Transformed", p)
-    return p;
-  });
+  }));
